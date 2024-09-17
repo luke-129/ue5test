@@ -14,13 +14,15 @@ class GITTEST_API AMyActor : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AMyActor();
+	virtual void Tick(float DeltaTime) override;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+private:
+	UPROPERTY(EditAnywhere)
+	TObjectPtr<class UStaticMeshComponent> Mesh;
+	
 
 };
